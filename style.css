@@ -1,0 +1,490 @@
+/* Define la fuente personalizada */
+@font-face {
+    font-family: 'Afacad Flux';
+    src: url('fonts/AfacadFlux.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Afacad Flux', Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    scroll-snap-type: y mandatory; /* Añadido para scroll snap */
+    overflow-y: scroll; /* Asegura que el scroll esté habilitado */
+    height: 100vh; /* Asegura que el body cubra toda la pantalla */
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4E3883;
+    color: white;
+    z-index: 1000;
+    padding: 1.4rem 1.2rem;
+}
+
+.main-header__logo {
+    height: 50px;
+}
+
+.main-header__nav {
+    display: flex;
+}
+
+.main-header__list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header__item a {
+    color: #ffddcc;
+    font-size: 1.4rem;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.5s ease; /* Añadido para transición más lenta */
+}
+
+.main-header__item a:hover {
+    background-color: #3f2b6e;
+}
+
+.main-header__toggle {
+    display: none;
+    background-color: #4E3883;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.main-header__toggle:hover {
+    background-color: #3f2b6e;
+}
+
+main {
+    scroll-snap-type: y mandatory; /* Añadido para scroll snap en el contenedor principal */
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('your-image.jpg') no-repeat center center/cover;
+    color: #8fbc8f;
+    text-align: center;
+    background-color: #4E3883;
+    scroll-snap-align: center; /* Añadido para scroll snap */
+}
+
+.main-section__Text {
+    font-family: 'Medula One', sans-serif;
+    font-size: 6em;
+    padding: 20px;
+    letter-spacing: 2px; /* Ajusta el valor según tus necesidades */
+}
+
+.main-section__Subtext {
+    font-size: 1.5em;
+    padding: 20px;
+    color: #a593e0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-section__button,.main-aboutme__button {
+    margin-top: 20px;
+    padding: 0.7rem 4.8rem;
+    background-color: #8fbc8f;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-family: 'Afacad Flux', serif;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    transition: background-color 0.5s ease; /* Añadido para transición más lenta */
+}
+.main-section__button a,.main-aboutme__button a{
+    text-decoration: none;
+    color: #4E3883;
+    font-weight: 900;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.main-section__button:hover, .main-aboutme__button:hover {
+    background-color: #649c64;
+}
+
+.main-portfolio {
+    padding: 2rem 1rem;
+    padding-bottom: 3rem;
+    text-align: left;
+    scroll-snap-align: center; /* Añadido para scroll snap */
+    background-color: #f8f6f0;
+    min-height: 100vh;
+}
+
+.main-portfolio h2 {
+    font-size: 3.4em;
+}
+.portfolio-title {
+    background-image: url('./src/Círculo\ lápiz.svg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: 16.4rem 16.4rem; /* Ajusta el tamaño de la imagen */
+    background-position: left; /* Posiciona la imagen al lado izquierdo */
+    
+    text-align: left; /* Alinea el texto al centro */
+    color: rgb(88, 85, 85); /* Ajusta el color del texto según sea necesario */
+    background-repeat: no-repeat;
+    font-size: 3em; /* Ajusta el tamaño de la fuente según sea necesario */
+    margin: 0; /* Elimina el margen por defecto */
+    margin-left: 3rem;
+}
+.portfolio-title h2{
+    margin-bottom: 0;
+}
+.main-portfolio p {
+    font-size: 1.2em;
+}
+.portfolio-subtitle {
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente según sea necesario */
+    color: rgb(88, 85, 85); /* Ajusta el color del texto según sea necesario */
+    margin: 0; /* Elimina el margen por defecto */
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    margin-left: 3rem;
+}
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 2rem;
+    width: 90%;
+    align-items: center;
+    justify-items:center;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    background-color: transparent; /* Elimina el fondo de la tarjeta */
+    border-radius: 10px;
+    box-shadow: none; /* Elimina el sombreado de la tarjeta */
+    transition: transform 0.3s ease; /* Mantiene la transición de zoom */
+    max-width: 24rem;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    
+    border: 0.6rem solid #4a4a4a; /* Agrega un borde gris a la imagen de portada */
+}
+
+.portfolio-item h3 {
+    color: #2e2e2e;
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.portfolio-item p {
+    font-size: 1em;
+    color: #666;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.aboutme, .resume, .contact {
+    padding: 50px 20px;
+    padding-left: 4rem; /* Añadido padding en la izquierda */
+    height: 100vh; /* Añadido para cubrir toda la pantalla */
+    scroll-snap-align: center; /* Añadido para scroll snap */
+}
+.aboutme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4e3883;
+    color: #ffddcc;
+    font-weight: 300;
+}
+
+.resume {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4E3883;
+    color: #FDDACD;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f4f4f4;
+    text-align: left;
+    color: #474747;
+}
+
+.aboutme__info, .aboutme__image, .resume__info, .resume__download {
+    width: 50%;
+}
+
+.contact__info {
+    margin-top: 6rem; /* Añadido margen superior */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+.contact__info p{
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-start; /* Alinea horizontalmente al inicio */
+}
+.aboutme__info {
+    word-wrap: break-word; /* Asegura que el texto se ajuste dentro del contenedor */
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.aboutme__info h2, .resume__info h2, .contact h2 {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+}
+
+.aboutme__info p, .resume__info p, .resume__info h3, .contact__info p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+.aboutme__info p{
+    font-size: 1.2rem;
+    width: 70%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+    
+}
+.aboutme__image, .resume__download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutme__image{
+    justify-content: start;
+}
+.aboutme__image img {
+    max-width: 100%;
+    border-radius: 10px;
+    max-height: 50rem;
+    height: max-content;
+    padding-top: 1rem;
+}
+
+.resume__button {
+    padding: 1rem 2rem;
+    background-color: #FDDACD;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.5s ease; /* Añadido para transición más lenta */
+}
+
+.resume__button:hover {
+    background-color: #f3bfad;
+}
+
+.contact__info i {
+    margin-right: 10px;
+}
+.resume__button{
+    text-decoration: none;
+    color: black;
+}
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .aboutme, .resume, .contact {
+        flex-direction: column;
+        padding-left: 20px; /* Ajusta el padding en pantallas más pequeñas */
+        height: auto; /* Ajusta la altura en pantallas más pequeñas */
+        padding-top: 4rem;
+    }
+
+    .aboutme__info, .aboutme__image, .resume__info, .resume__download {
+        width: 100%;
+        margin-bottom: 20px; /* Añade margen inferior para separar los elementos */
+    }
+
+    .main-header__list {
+        display: none; /* Oculta la lista de navegación */
+    }
+
+    .main-header__toggle {
+        display: block; /* Muestra el botón de navegación */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Cambia a una columna en pantallas más pequeñas */
+    }
+    /* Estilos para navegación en móviles */
+.main-header__list {
+    display: none; /* Oculta la lista inicialmente */
+    flex-direction: column; /* Disposición vertical */
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de tu header */
+    right: 0;
+    background-color: #4E3883;
+    width: 100%;
+    z-index: 999;
+}
+
+.main-header__list.active {
+    display: flex; /* Muestra la lista cuando está activa */
+}
+
+.main-header__item {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.main-header__item a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.main-header__item a:hover {
+    background-color: #3f2b6e;
+}
+}
+.flowers-section{
+    background-color: #4E3883;
+    padding: 0 7rem;
+}
+.flowers-section img{
+    
+    height: 10%;
+}
+.contact_color{
+    color: #a593e0;
+}
+.contact__info img{
+    max-width: 2rem;
+    margin-right: 2rem;
+    
+}
+.contact__info p{
+    font-size: 1.4rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+}
+.contact__trazo{
+    width: 60rem;
+}
+/* NUEVOS DETALLES */
+.modal {
+    visibility: hidden; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro */
+    opacity: 0;
+    transition: opacity 0.6s ease, visibility 0.6s ease; /* Transición suave */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto; /* Márgenes en alto y ancho */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ancho de la ventana modal */
+    height: 90%; /* Altura de la ventana modal */
+    max-width: 1200px; /* Ancho máximo */
+    max-height: 90%; /* Altura máxima */
+    overflow: auto; /* Permite el desplazamiento si el contenido es demasiado grande */
+    transform: translateY(-50px);
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Transición suave */
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%; /* Ancho de la ventana modal */
+        height: fit-content; /* Altura de la ventana modal */
+        max-width: 95%; /* Ancho máximo */
+        max-height: 70%; /* Altura máxima */
+        transform: translateY(0); /* Centrado vertical */
+
+    }
+}
