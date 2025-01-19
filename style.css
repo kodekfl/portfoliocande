@@ -487,4 +487,7 @@ main {
         transform: translateY(0); /* Centrado vertical */
 
     }
+    .flowers-section{
+        padding:0;
+    }
 }
